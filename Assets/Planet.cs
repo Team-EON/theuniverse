@@ -8,20 +8,20 @@ public class Planet : UniverseEntity
     public Vector3 initialForce;
     public Rigidbody anotherPlanet;
     private float GravitationalConstant = 10f;
+    private float massMultiple;
     private float mass1, mass2;
 
     private void Start()
     {
         this.rb = GetComponent<Rigidbody>();
-        mass1 = this.rb.mass;
-        mass2 = this.anotherPlanet.mass;
+        massMultiple = GravitationalConstant * this.rb.mass * this.anotherPlanet.mass;
         rb.AddForce(initialForce);
     }
 
     void FixedUpdate()
     {
         Vector3 direction = anotherPlanet.transform.position - rb.transform.position;
-        float gForce = (GravitationalConstant * mass1 * mass2) / Mathf.Pow(direction.magnitude, 2);
+        float gForce = massMultiple / Mathf.Pow(direction.magnitude, 2);
         initialForce = initialForce + (direction.normalized * gForce);
         rb.AddForce(direction.normalized * gForce);
     }
