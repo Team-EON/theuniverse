@@ -5,12 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private AssetBundle assetBundle;
+    private string[] scenePaths;
+
+    public void Start()
+    {
+        assetBundle = AssetBundle.LoadFromFile("Scenes");
+        scenePaths = assetBundle.GetAllScenePaths();
+        Debug.Log("Count: " + scenePaths.Length);
+    }
+
     public void ARGameButtonStart()
     {
         SceneManager.LoadScene("ARGAME");
     }
     public void DGameButtonStart()
     {
-        SceneManager.LoadScene("3DGAME");
+        SceneManager.LoadScene("SampleScene");
     }
 }
