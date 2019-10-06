@@ -5,11 +5,10 @@ using UnityEngine;
 public class UniverseEntity : MonoBehaviour
 {
     [System.NonSerialized]
-    public float GravitationalConstant = 6f;
+    public float GravitationalConstant = 160f;
     public float radius = 1f;
-    [System.NonSerialized]
     // Ratio of initForce and distance. [Remove it after deriving initForce formula.]
-    public float ifDisRate = 6.5857f;
+    public static float ifDisRate = 36.5857f;
 
     protected void Start()
     {
