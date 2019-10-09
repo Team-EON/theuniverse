@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class UniverseEntity : MonoBehaviour
 {
-
-    public float diameter = 1f;
-
-    private void Start()
+    [System.NonSerialized]
+    public float GravitationalConstant = 40f;
+    public float radius = 1f;
+    // Ratio of initForce and distance. [Remove it after deriving initForce formula.]
+    public static float ifDisRate = 36.5857f;
+    protected void Start()
     {
-        this.transform.localScale *= diameter;
+        this.transform.localScale = new Vector3(radius, radius, radius);
     }
 }
