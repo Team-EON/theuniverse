@@ -14,7 +14,6 @@ public class CameraController : MonoBehaviour
         // Change position
         xAxis = CrossPlatformInputManager.GetAxis("Horizontal");
         yAxis = CrossPlatformInputManager.GetAxis("Vertical");
-        Debug.Log("forward: " + this.transform.forward + " position: " + this.transform.position);
         this.transform.position += yAxis * this.transform.forward;
     }
 }
