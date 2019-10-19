@@ -7,6 +7,8 @@ public class Planet : UniverseEntity
     private Rigidbody rb;
     [SerializeField]
     private float force;
+    [SerializeField]
+    private float degree = 1f;
     private Vector3 initialForce;
     public float distanceFromStar = 7;
     private Rigidbody anotherPlanet;
@@ -21,6 +23,8 @@ public class Planet : UniverseEntity
         massMultiple = (GravitationalConstant * this.rb.mass * this.anotherPlanet.mass);
         initialForce = new Vector3(force, 0, 0);
         rb.AddForce(initialForce);
+
+        transform.Rotate(Vector3.left, degree);
     }
 
     void FixedUpdate()
@@ -28,5 +32,6 @@ public class Planet : UniverseEntity
         Vector3 distance = anotherPlanet.transform.position - rb.transform.position;
         float gForce = massMultiple / Mathf.Pow(distance.magnitude, 2);
         rb.AddForce(distance.normalized * gForce);
+
     }
 }
