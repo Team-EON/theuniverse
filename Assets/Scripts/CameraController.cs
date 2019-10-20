@@ -27,4 +27,5 @@ public class CameraController : MonoBehaviour
         Camera.main.transform.localRotation = initRotation;
     }
 
+
 }
