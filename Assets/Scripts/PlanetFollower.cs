@@ -6,6 +6,7 @@ using UnityStandardAssets.Cameras;
 public class PlanetFollower : LookatTarget
 {
     public PlanetSelectTap planetSelector;
+    public GameObject cursorShip;
     public void SetPlanet()
     {
         if (planetSelector.GetLastTouched() != null)
@@ -13,5 +14,10 @@ public class PlanetFollower : LookatTarget
             GameObject gObj = planetSelector.GetLastTouched().gameObject;
             SetTarget(gObj.transform);
         }
+    }
+
+    public void FollowCursorship()
+    {
+        SetTarget(cursorShip.transform);
     }
 }

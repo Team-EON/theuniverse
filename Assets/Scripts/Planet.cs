@@ -26,6 +26,7 @@ public class Planet : UniverseEntity
     void FixedUpdate()
     {
         Vector3 distance = anotherPlanet.transform.position - rb.transform.position;
+        massMultiple = (GravitationalConstant * this.rb.mass * this.anotherPlanet.mass);
         float gForce = massMultiple / Mathf.Pow(distance.magnitude, 2);
         rb.AddForce(distance.normalized * gForce);
     }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sun
+  - Canvas
+  - Canvas2
+  - Canvas1
   layers:
   - Default
   - TransparentFX

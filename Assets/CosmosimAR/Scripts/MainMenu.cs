@@ -17,10 +17,15 @@ public class MainMenu : MonoBehaviour
 
     public void ARGameButtonStart()
     {
-        SceneManager.LoadScene("ARGAME");
+        SceneManager.LoadScene("ARMode");
     }
     public void DGameButtonStart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("PrototypeScene");
+    }
+
+    public void CustomizePlanetStart()
+    {
+        SceneManager.LoadScene("Customize");
     }
 }
